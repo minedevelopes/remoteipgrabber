@@ -19,13 +19,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--starts', help='Starts the server and waits for connections[default: if you run the script it auto starts the server]', choices=['yes','YES'])
     parser.add_argument('--stops', help='Stops the server and exits the script', choices=['yes','YES'])
-    parser.add_argument('--hostname', help='Sets the server hostname for the server', choices=['getauto', 'get'])
-    parser.add_argument('port', help='Sets the TCP port the server with lissen on')
     arg = parser.parse_args()
 
     s = socket.socket()
     host = socket.gethostname()
-    port = (arg.port)
+    port = 12345
     s.bind((host, port))
     sstatus = 'Waiting/Slient'
 
